@@ -52,9 +52,9 @@ class StudentsController extends Controller
         
         $request->validate([
             'nama' => 'required',
-            'nrp' => 'required',
+            'nrp' => 'required|size:9',
             'email' => 'required'
-        ])
+        ]);
 
         Student::create($request->all());
         return redirect('/students')->with('status', 'Data Mahasiswa berhasil Ditambahkan!');
