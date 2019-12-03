@@ -11,15 +11,26 @@
                         @csrf
                         <div class="form-group">
                             <label for="nama">Nama</label>
-                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Mahasiswa">
+                            <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama" name="nama" placeholder="Nama Mahasiswa" value="{{old('email')}}">
+                            @error('nama') 
+                            <div class="invalid-feedback">
+                                {{$message}}
+                            </div> 
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="nrp">NRP</label>
-                            <input type="text" class="form-control" id="nrp" name="nrp" placeholder="NRP Mahasiswa">
+                            <input type="text" class="form-control @error('nrp') is-invalid @enderror" id="nrp" name="nrp" placeholder="NRP Mahasiswa" value="{{old('email')}}">
+                            @error('nama') 
+                            <div class="alert alert-danger">{{$message}}</div> 
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="email Mahasiswa">
+                            <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" placeholder="email Mahasiswa" value="{{old('email')}}">
+                            @error('nama') 
+                            <div class="alert alert-danger">{{$message}}</div> 
+                            @enderror
                         </div>
                         <div class="form-group">
                                 <label for="jurusan">Jurusan</label>

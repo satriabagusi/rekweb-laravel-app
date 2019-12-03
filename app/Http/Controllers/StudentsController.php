@@ -43,14 +43,21 @@ class StudentsController extends Controller
         // $student->jurusan = $request->jurusan;
         // $student->save();
 
-        Student::create([
-            'nama' => $request->nama,
-            'nrp' => $request->nrp,
-            'email' => $request->email,
-            'jurusan' => $request->jurusan
-        ]);
+        // Student::create([
+        //     'nama' => $request->nama,
+        //     'nrp' => $request->nrp,
+        //     'email' => $request->email,
+        //     'jurusan' => $request->jurusan
+        // ]);
+        
+        $request->validate([
+            'nama' => 'required',
+            'nrp' => 'required',
+            'email' => 'required'
+        ])
 
-        return redirect('/students');
+        Student::create($request->all());
+        return redirect('/students')->with('status', 'Data Mahasiswa berhasil Ditambahkan!');
     }
 
     /**
