@@ -20,13 +20,13 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                   <ul class="navbar-nav">
                     <li class="nav-item active">
-                    <a class="nav-link" href="/">Home</a>
+                      <a class="nav-link" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="/about">About</a>
+                      <a class="nav-link" href="/about">About</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="">Mahasiswa</a>
+                      <a class="nav-link" href="">Mahasiswa</a>
                     </li>
                   </ul>
                 </div>
@@ -36,7 +36,7 @@
               <div class="container">
                   <div class="row">
                       <div class="col-10">
-                            <h1 class="mt-3">Hello, world!</h1>
+                            <h1 class="mt-3">Hello, {{$nama}}!</h1>
                       </div>
                   </div>
               </div>
